@@ -1,0 +1,43 @@
+:host{
+    margin-bottom: 10px;
+    /* background-color: rgb(86, 98, 156); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+
+    background: rgba(13, 21, 174, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+:host:hover{
+    cursor: pointer;
+}
+
+.button{
+    background: rgba(192, 15, 15, 0.644)!important;
+    height: 70%;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.button:hover{
+    background: rgba(129, 10, 10, 0.693)!important;
+
+}
+
+.item-checkbox{
+    height: 17px;
+    width: 17px;
+    border-radius: 10px;
+    border: none;
+    accent-color: rgb(8, 145, 30);
+}
+

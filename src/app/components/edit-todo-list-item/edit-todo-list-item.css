@@ -1,0 +1,46 @@
+:host {
+    position: absolute;
+}
+
+.container {
+    position: absolute;
+    width: 300px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+
+    background: rgba(60, 92, 131, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+}
+
+input{
+    width: 90%;
+    height: 60%;
+    border-radius: 20px;
+    padding: 5px;
+    border: none;
+}
+
+input:focus-visible{
+    outline: none;
+}
+
+.button{
+    background-color: rgb(144, 46, 46)!important;
+    height: 70%;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+.button:hover{
+    background-color: rgb(100, 32, 32)!important;
+}
+.button:disabled{
+    background-color: rgb(104, 99, 99)!important;
+}

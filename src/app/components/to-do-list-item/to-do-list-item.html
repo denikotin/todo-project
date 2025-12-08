@@ -1,0 +1,10 @@
+<span>{{itemData().text}}</span>
+<app-button-component (onButtonClicked)="onDeleteClick(itemData().id)" [title]="'Delete'">
+                      <button appTipText [tipText]="'Кнопка'" 
+                              (click)="onDeleteClick(itemData().id)"
+                              (mouseenter)="$event.stopPropagation()"
+                              (mousemove)="$event.stopPropagation()"
+                              class="button">
+                              Delete
+                      </button>
+</app-button-component>

@@ -1,0 +1,19 @@
+<form [formGroup]="todoListFormGroup" (ngSubmit)="onSubmit()">
+    <div class="add-item-container">
+        <input class="add-item-input" [formControl]="todoListFormGroup.controls.title"  placeholder="Add your new todo" type="text">
+        <app-button-component>
+            <button appTipText [tipText]="'Кнопка'"
+                    (mouseenter)="$event.stopPropagation()"
+                    (mousemove)="$event.stopPropagation()" 
+                    [disabled]="todoListFormGroup.controls.title.value?.length === 0" 
+                    class="button"
+                    type="submit">
+                Add Task
+            </button>
+        </app-button-component>
+    </div>
+
+    <div class="textarea-container">
+        <textarea placeholder="Type description..." [formControl]="todoListFormGroup.controls.description"  class="textarea"></textarea>
+    </div>
+</form>

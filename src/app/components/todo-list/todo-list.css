@@ -1,0 +1,106 @@
+:host {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    margin: 0px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+.main-container {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+
+.sub-container {
+    display: flex;
+    gap: 30px;
+    height: 100%;
+}
+
+.filter-container {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.filter-container>select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container>select:active {
+    outline: none;
+}
+
+.filter-container>select:focus {
+    outline: none;
+}
+
+option {
+    color: black;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 80px;
+    min-width: 359px;
+}
+
+.selected {
+    background: rgba(13, 21, 174, 0.358) !important;
+}
+
+.button {
+    background: rgba(15, 192, 71, 0.426);
+    height: 100%;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    background: rgba(7, 90, 33, 0.426);
+}
+
+.button:disabled {
+    background: rgba(151, 151, 151, 0.426);
+}
+
+input {
+    padding: 0;
+    margin: 0;
+    height: 17px; width:17px;
+    accent-color: rgb(8, 145, 30);
+}

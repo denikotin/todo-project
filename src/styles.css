@@ -1,0 +1,74 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Zalando Sans", sans-serif;
+  overflow: hidden;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: "Zalando Sans", sans-serif;
+  outline: none;
+  color: white;
+}
+
+input {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+textarea {
+  padding: 10px;
+  border: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+
+body {
+  background: linear-gradient(133deg, #861a33, #22628b, #58b977, #ea825e);
+  background-size: 240% 240%;
+  animation: gradient-animation 24s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  color: rgb(128, 128, 128);
+  border: none;
+  border-radius: 10px;
+  margin-left: 5px;
+  min-width: 100px;
+  cursor: pointer;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

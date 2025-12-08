@@ -1,0 +1,22 @@
+{
+    "list": [
+        {
+            "id": 1,
+            "text": "Buy a new gaming laptop",
+            "description": "Brand new gaming laptop",
+            "status": "InProgress"
+        },
+        {
+            "id": 2,
+            "text": "Complete previous task",
+            "description": "Dont forget to complete, it is important !!!",
+            "status": "InProgress"
+        },
+        {
+            "id": 3,
+            "text": "ToDo Something Cool",
+            "description": "YEEEEASS",
+            "status": "InProgress"
+        }
+    ]
+}
