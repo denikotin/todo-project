@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { TodoList } from './components/todo-list/todo-list';
-import { TodoItemView } from './components/todo-item-view/todo-item-view';
+import { TodoItemView } from '../todo-item-view/todo-item-view';
+import { TodoList } from '../todo-list/todo-list';
 
 export const routes: Routes = [
     {
