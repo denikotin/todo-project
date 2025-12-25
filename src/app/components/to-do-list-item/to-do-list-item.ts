@@ -1,10 +1,9 @@
-/* eslint-disable @angular-eslint/no-output-on-prefix */
 import { CommonModule } from '@angular/common';
 import { Component, input, output  } from '@angular/core';
 import { ButtonComponent } from '../button-component/button-component';
-import { ListItem} from '../../interfaces/list-item';
-import { TipTextDirective } from '../../directives/tip-text.directive';
 import { FormsModule } from '@angular/forms';
+import { TipTextDirective } from '../../shared/directives/tip-text.directive';
+import { ListItem } from '../../core/models/list-item';
 
 @Component({
   selector: 'app-to-do-list-item',

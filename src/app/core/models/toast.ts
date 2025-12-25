@@ -1,4 +1,4 @@
-import { ToastStatus } from "../components/Toasts/toast-component/toast-component";
+import { ToastStatus } from "../../components/Toasts/toast-component/toast-component";
 
 export interface Toast{
     id?: number;

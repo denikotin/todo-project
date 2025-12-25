@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Toast } from '../../../interfaces/toast';
+import { Toast } from '../../../core/models/toast';
 
 export type ToastStatus = 'success' | 'error' | 'info';
 

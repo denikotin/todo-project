@@ -5,15 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { ToDoListItem } from '../to-do-list-item/to-do-list-item';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ListItem} from '../../interfaces/list-item';
-import { TipTextDirective } from '../../directives/tip-text.directive';
-import { TodoListService } from '../../services/todo-list-service';
 import { ToastsComponent } from '../Toasts/toasts-component/toasts-component';
-import { ToastService } from '../../services/toast-service';
 import { LoadingSpinner } from '../loading-spinner/loading-spinner';
-import { ListItemStatus } from '../../enums/todo-enums';
+import { ListItemStatus } from '../../core/enums/todo-enums';
 import { TodoCreateItem } from '../todo-create-item/todo-create-item';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { TipTextDirective } from '../../shared/directives/tip-text.directive';
+import { TodoListService } from '../../core/services/todo-list-service';
+import { ToastService } from '../../core/services/toast-service';
+import { ListItem } from '../../core/models/list-item';
 
 @Component({
   selector: 'app-todo-list',

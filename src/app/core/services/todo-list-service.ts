@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { ApplicationRef, ComponentRef, createComponent, DestroyRef, EnvironmentInjector, HostListener, inject, Injectable, Renderer2 } from "@angular/core";
-import { InputedData, ListItem } from "../interfaces/list-item";
-import { EditTodoListItem } from "../components/edit-todo-list-item/edit-todo-list-item";
+import { InputedData, ListItem } from "../models/list-item";
 import { ToastService } from "./toast-service";
 import { ListItemStatus } from "../enums/todo-enums";
 import { TodoHttpService } from "./todoHttpService";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { EditTodoListItem } from "../../components/edit-todo-list-item/edit-todo-list-item";
 
 @Injectable({
     providedIn: 'root',

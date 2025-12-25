@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { ComponentRef, Directive, HostListener, inject, input, OnDestroy, Renderer2, ViewContainerRef } from "@angular/core";
-import { TipComponent } from "../components/tip-component/tip-component";
+import { TipComponent } from "../../components/tip-component/tip-component";
 
 @Directive({
     selector: '[appTipText]',

@@ -1,10 +1,10 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
-import { ListItem } from '../../interfaces/list-item';
 import { FormsModule } from '@angular/forms';
-import { TodoListService } from '../../services/todo-list-service';
-import { ListItemStatus } from '../../enums/todo-enums';
+import { ListItemStatus } from '../../core/enums/todo-enums';
 import { ActivatedRoute } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TodoListService } from '../../core/services/todo-list-service';
+import { ListItem } from '../../core/models/list-item';
 
 @Component({
   selector: 'app-todo-item-view',

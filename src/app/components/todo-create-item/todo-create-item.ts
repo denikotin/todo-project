@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { ButtonComponent } from '../button-component/button-component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { TipTextDirective } from '../../directives/tip-text.directive';
-import { TodoListService } from '../../services/todo-list-service';
-import { ToastService } from '../../services/toast-service';
+import { TipTextDirective } from '../../shared/directives/tip-text.directive';
+import { TodoListService } from '../../core/services/todo-list-service';
+import { ToastService } from '../../core/services/toast-service';
 
 @Component({
   selector: 'app-todo-create-item',

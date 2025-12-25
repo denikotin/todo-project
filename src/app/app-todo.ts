@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './app-todo.css'
 })
 export class AppTodo {
-
+  
 }
