@@ -18,5 +18,24 @@
             "description": "YEEEEASS",
             "status": "InProgress"
         }
+    ],
+
+    "users": [
+        {
+            "id": 1,
+            "username": "Admin",
+            "password": "admin",
+            "firstname": "Admin",
+            "lastname": "Admin",
+            "role": "admin"
+        },
+        {
+            "id": 2,
+            "username": "nikotin",
+            "password": "123",
+            "firstname": "Денис",
+            "lastname": "Никотин",
+            "role": "user"
+        }
     ]
 }

@@ -1,3 +1,4 @@
+import { provideAnimations } from "@angular/platform-browser/animations";
 /* eslint-disable comma-dangle */
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
@@ -10,6 +11,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAnimations(),
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -18,5 +20,5 @@ export const appConfig: ApplicationConfig = {
     provideEffects(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideEventPlugins(),
-]
+    ]
 };

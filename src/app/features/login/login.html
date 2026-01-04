@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="liquid-container">
+    <div class="liquidGlass-effect"></div>
+    <div class="liquidGlass-tint"></div>
+    <div class="liquidGlass-shine"></div>
+    <div class="login-container">
+
+        <span>Вход</span>
+        
+        <tui-textfield>
+            <label tuiLabel>Логин</label>
+            <input tuiTextfield [(ngModel)]="username"/>
+        </tui-textfield>
+        
+        <tui-textfield>
+            <label tuiLabel>Пароль</label>
+            <input tuiTextfield type="password" [(ngModel)]="password"/>
+            @if(username() && password()){
+                <tui-icon icon="@tui.arrow-right" />
+            }
+
+        </tui-textfield>
+        
+    </div>
+</div>
+
+
+

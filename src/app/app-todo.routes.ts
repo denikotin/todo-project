@@ -1,14 +1,16 @@
 import { Routes } from '@angular/router';
 import { TodoItemView } from './components/todo-item-view/todo-item-view';
-import { TodoList } from './components/todo-list/todo-list';
 import { Backlog } from './features/backlog/backlog';
 import { Board } from './features/board/board';
-import { Login } from './components/login/login';
+import { Home } from './shared/components/home/home';
+import { authGuard } from './core/guards/auth.guard';
+import { Login } from './features/login/login';
 
 export const routes: Routes = [
     {
-        path: ' ',
-        redirectTo: 'backlog',
+        path: '',
+        component: Home,
+        canActivate: [authGuard]
     },
     {
         path: 'login',
@@ -28,6 +30,6 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'tasks',
+        redirectTo: '',
     },
 ];

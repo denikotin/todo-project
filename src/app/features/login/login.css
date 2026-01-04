@@ -1,0 +1,48 @@
+:host{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.liquid-container{
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.liquidGlass-shine{
+    border-radius: 50%;
+}
+
+.login-container{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    gap: 20px;
+}
+
+tui-textfield{
+    width: 50%;
+
+}
+
+span{
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 20pt;
+}
+
+
+
