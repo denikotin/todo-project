@@ -1,63 +1,90 @@
-import { inject, Injectable, signal } from "@angular/core";
 import { User } from "../models/user";
-import { map, Observable, tap } from "rxjs";
+import { Router } from "@angular/router";
 import { HttpService } from "./http.service";
+import { catchError, map, Observable, of } from "rxjs";
+import { inject, Injectable, signal } from "@angular/core";
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
+    private readonly AUTH_STORAGE_KEY = 'auth';
+
     private httpService = inject(HttpService)
+    private router = inject(Router)
 
     isLoggedIn = signal(false);
     user = signal<User | null>(null)
 
-    public login(username: string, password: string): Observable<User> {
+    public constructor() {
+        this.loadAuthState();
+    }
+
+    // Метод авторизации
+    public login(username: string, password: string): Observable<boolean> {
         return this.httpService.getUsers().pipe(
             map((users: User[]) => {
                 const user = users.find(u => u.username === username && u.password === password);
-                if (!user) {
-                    throw new Error('Неверный email или пароль');
+                if (user) {
+                    this.isLoggedIn.set(true);
+                    this.user.set(user);
+                    this.saveAuthState(user);
+                    this.router.navigate(['/'], {
+                        replaceUrl: true
+                    });
+                    return true
+                } else {
+                    return false;
                 }
-                return user;
             }),
-            tap((user: User) => {
-                this.isLoggedIn.set(true);
-                this.user.set(user);
-            })
+            catchError(() => of(false))
         )
     }
 
+    // Выход из аккаунта
+    public logout(): void {
+        this.isLoggedIn.set(false);
+        this.user.set(null);
+        this.clearAuthStorage();
+        this.router.navigate(['/login'], {
+            replaceUrl: true,
+            queryParams: { sessionEnded: true }
+        })
+    }
 
-    // private setSession(user: User) {
-    //     localStorage.setItem('token', `fake-jwt-${user.id}`);
-    //     localStorage.setItem('user', JSON.stringify(user));
-    // }
+    // Загрузка авторизованного пользователя
+    private loadAuthState(): void {
+        const savedAuth = sessionStorage.getItem(this.AUTH_STORAGE_KEY)
 
-    // logout() {
-    //     localStorage.removeItem('token');
-    //     localStorage.removeItem('user');
-    //     this.isLoggedIn.set(false);
-    //     this.user.set(null);
-    //     this.currentUserSubject.next(null);
-    //     this.router.navigate(['/login']);
-    // }
+        if (savedAuth) {
+            try {
+                const authData = JSON.parse(savedAuth);
+                this.isLoggedIn.set(true);
+                this.user.set(authData.user);
 
-    // private checkAuth() {
-    //     const token = localStorage.getItem('token');
-    //     const userData = localStorage.getItem('user');
-    //     if (token && userData) {
-    //         const user = JSON.parse(userData);
-    //         this.isLoggedIn.set(true);
-    //         this.user.set(user);
-    //         this.currentUserSubject.next(user);
-    //     }
-    // }
+            } catch (error) {
+                this.clearAuthStorage();
+            }
+        }
+    }
 
-    // private handleError(error: HttpErrorResponse) {
-    //     return throwError(() => new Error('Ошибка авторизации'));
-    // }
+    // Сохранение авторизованного пользователя
+    private saveAuthState(user: User): void {
+        const authData = {
+            user: {
+                id: user.id,
+                username: user.username,
+                firstname: user.firstname,
+                lastname: user.lastname, 
+                icon: user.icon,
+            }
+        };
+        sessionStorage.setItem(this.AUTH_STORAGE_KEY, JSON.stringify(authData));
+    }
 
-    // get currentUser$() {
-    //     return this.currentUserSubject.asObservable();
-    // }
+    // Очистка авторизованного пользователя
+    private clearAuthStorage(): void {
+        sessionStorage.removeItem(this.AUTH_STORAGE_KEY);
+    }
+
+
 }

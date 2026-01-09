@@ -1,27 +1,31 @@
+<form [formGroup]="loginForm" >
 <div class="liquid-container">
     <div class="liquidGlass-effect"></div>
     <div class="liquidGlass-tint"></div>
     <div class="liquidGlass-shine"></div>
     <div class="login-container">
 
-        <span>Вход</span>
-        
-        <tui-textfield>
-            <label tuiLabel>Логин</label>
-            <input tuiTextfield [(ngModel)]="username"/>
-        </tui-textfield>
-        
-        <tui-textfield>
-            <label tuiLabel>Пароль</label>
-            <input tuiTextfield type="password" [(ngModel)]="password"/>
-            @if(username() && password()){
-                <tui-icon icon="@tui.arrow-right" />
-            }
+            <span>Вход</span>
+            
+            <tui-textfield>
+                <label tuiLabel>Логин</label>
+                <input tuiTextfield formControlName="username"/>
+            </tui-textfield>
+            
+            <tui-textfield>
+                <label tuiLabel>Пароль</label>
+                <input tuiTextfield type="password" formControlName="password" />
+                <tui-icon tuiPassword />
+                @if(loginForm.get('username').value && loginForm.get('password').value){
+                        <tui-icon (click)="onSubmit()" icon="@tui.arrow-right" />
+                }
+            </tui-textfield>
 
-        </tui-textfield>
-        
+            
+            
+        </div>
     </div>
-</div>
-
+    
+</form>
 
 

@@ -6,5 +6,5 @@ export interface User{
     password: string;
     firstname: string;
     lastname: string;
-    role: Role;
+    icon: string;
 }

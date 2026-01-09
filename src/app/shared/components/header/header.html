@@ -4,5 +4,23 @@
           <div class="liquidGlass-shine"></div>
           <div class="wrapper">
             <span>Tasks Board</span>
+
+              <button iconEnd="@tui.chevron-down"
+                      class="user" 
+                      tuiButton
+                      tuiDropdownAlign="right"
+                      type="button"
+                      [tuiDropdown]="dropdown"
+                      [(tuiDropdownOpen)]="isOpened">
+                      <img class="user-avatar" src="{{getUser().icon}}" alt="">
+                      {{getUser().firstname}} {{getUser().lastname}}
+              </button>
+
+              <ng-template #dropdown let-close>
+                      <button appearance="flat"  size="s" tuiButton type="button" (click)="logout()">
+                          Выйти
+                      </button>
+              </ng-template>
+
           </div>
 </div>

@@ -25,9 +25,9 @@
             "id": 1,
             "username": "Admin",
             "password": "admin",
-            "firstname": "Admin",
-            "lastname": "Admin",
-            "role": "admin"
+            "firstname": "Админ",
+            "lastname": "Админов",
+            "icon": "avatar.png"
         },
         {
             "id": 2,
@@ -35,7 +35,7 @@
             "password": "123",
             "firstname": "Денис",
             "lastname": "Никотин",
-            "role": "user"
+            "icon": "avatar.png"
         }
     ]
 }

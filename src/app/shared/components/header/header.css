@@ -17,9 +17,19 @@
     display: flex;
     padding: 0px 20px 0px 20px;
     align-items: center;
+    justify-content: space-between;
 }
 .wrapper>span{
     font-size: 20pt;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.486);
+    font-weight: 700;
+    color: rgba(21, 90, 194, 0.589);
+}
+
+.user{
+    height: 40px;
+}
+
+.user-avatar{
+    width: 30px;
+    height: 30px;
 }

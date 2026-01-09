@@ -157,9 +157,8 @@ ul {
     z-index: 0;
     inset: 0;
     overflow: hidden;
-    background: radial-gradient(circle at 30% 30%, #f5f5f544 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, #c0c0c038 0%, transparent 50%);
-    background-size: 200% 200%, 200% 200%;
+    background-color: rgba(255, 255, 255, 0.548);
+
 }
 
 .liquidGlass-tint {
