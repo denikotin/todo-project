@@ -190,3 +190,15 @@ ul {
         background-position: 100% 100%, 0% 0%;
     }
 }
+
+*::-webkit-scrollbar {
+  width: 2px;
+}
+*::-webkit-scrollbar-track {
+  background: none;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: none;
+  border-radius: 5px;
+  border: 3px solid #0965B0;
+}

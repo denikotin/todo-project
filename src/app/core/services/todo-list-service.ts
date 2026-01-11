@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { ApplicationRef, ComponentRef, createComponent, DestroyRef, EnvironmentInjector, HostListener, inject, Injectable, Renderer2 } from "@angular/core";
+import { ApplicationRef, ComponentRef, createComponent, DestroyRef, EnvironmentInjector, inject, Injectable,  } from "@angular/core";
 import { InputedData, ListItem } from "../models/list-item";
-import { ToastService } from "./toast-service";
-import { ListItemStatus } from "../enums/todo-enums";
 import { TodoHttpService } from "./todoHttpService";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { EditTodoListItem } from "../../components/edit-todo-list-item/edit-todo-list-item";
+import { EditTodoListItem } from "../../shared/components/edit-todo-list-item/edit-todo-list-item";
+import { TaskStatus } from "../enums/task-status";
+import { Task } from "../models/task";
 
 @Injectable({
     providedIn: 'root',
@@ -16,13 +14,12 @@ export class TodoListService {
     
     private appRef = inject(ApplicationRef);
     private destroyRef = inject(DestroyRef);
-    private toastService = inject(ToastService);
     private todoHttpService = inject(TodoHttpService);
     private environmentInjector = inject(EnvironmentInjector);
 
     private editItemListDialogRef: ComponentRef<EditTodoListItem>;
 
-    public todoList: ListItem[];
+    public todoList: Task[];
 
     public getTodoList(): void{
         this.todoHttpService.getTodoList().pipe(takeUntilDestroyed(this.destroyRef)).subscribe((data) => {
@@ -32,14 +29,14 @@ export class TodoListService {
 
     public fullfillItem(id:number): void{
         const item = this.getListItem(id);
-        item.status = ListItemStatus.Completed;
-        this.toastService.showToast({title:'Success', message: 'To do done !', status:'success', duration: 3000});
+        item.status = TaskStatus.Done;
+        // this.toastService.showToast({title:'Success', message: 'To do done !', status:'success', duration: 3000});
     }
 
     public addItem(data: InputedData): void {
         const array = this.todoList.map(item => item.id);
         const maxIndex = Math.max(...array)
-        this.todoList.push({ id: maxIndex + 1, text: data.text, description: data.description, status: ListItemStatus.InProgress })
+        // this.todoList.push({ id: maxIndex + 1, name: data.text, description: data.description, status: TaskStatus.InProgress })
     }
 
     public delete(id: number): void {
@@ -48,12 +45,12 @@ export class TodoListService {
 
     public changeItemTitle(id: number, title: string): void {
         const listItem = this.getListItem(id);
-        listItem.text = title;
+        listItem.name = title;
         this.destroyEditTodoItemTitleDialog();
-        this.toastService.showToast({title:'Success', message: 'To do item edited', status:'success', duration: 3000});
+        // this.toastService.showToast({title:'Success', message: 'To do item edited', status:'success', duration: 3000});
     }
 
-    public getListItem(id: number): ListItem {
+    public getListItem(id: number): Task {
         return this.todoList?.filter(item => item.id == id)[0]
     }
 
@@ -73,7 +70,7 @@ export class TodoListService {
         itemListDialogElement.style.top = `${coordinates.y}px`;
 
         this.editItemListDialogRef.instance.id = id;
-        this.editItemListDialogRef.instance.inputtedTitle = this.getListItem(id).text;
+        this.editItemListDialogRef.instance.inputtedTitle = this.getListItem(id).name;
     }
 
     private destroyEditTodoItemTitleDialog(): void {

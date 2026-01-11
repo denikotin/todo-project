@@ -1,1 +1,36 @@
-<p>backlog works!</p>
+@if(!isLoading){
+    <div class="container">
+        <div class="todo-list">
+
+            <div class="filter-container">
+                <tui-textfield [stringify]="stringify" [content]="filterValue" class="filter"  tuiChevron>
+                    <input name="ino_1"   tuiSelect    [ngModel]="filterKey" (ngModelChange)="onFilter($event)" />
+                    <tui-data-list-wrapper   *tuiTextfieldDropdown  new  [items]="filterStatusList()"/>
+                </tui-textfield>
+            </div>
+
+            <ul>
+                @for (item of todoData; track $index) {
+                    <li>
+                        <app-to-do-list-item appTipText [task]="item" 
+                                            [routerLink]="[item.id]"
+                                            routerLinkActive="selected-task"
+                                            (click)="onItemClicked(item.id)" 
+                                            (dblclick)="onItemDblClicked(item.id)" 
+                                            (onDelete)="deleteItem($event)"
+                                            [ngClass]="selectedItemId == item.id ? 'selected' : '' ">
+                        </app-to-do-list-item>                
+                    </li>
+                }
+            </ul>
+
+        </div>
+        <div style="width:100%; ">
+            <router-outlet/>
+        </div>
+    </div>
+} @else {
+    <div style="height: 100%; width:100%; display: flex; justify-content: center; align-items: center;"> 
+        <tui-loader [size]="'xxl'" />
+    </div>
+}

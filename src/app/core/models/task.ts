@@ -1,16 +1,14 @@
-import { User } from "./user";
-
-export type TaskStatus = 'todo' | 'in_progress' | 'review' | 'done';
-export type TaskPriority = 'low' | 'medium' | 'high' | 'critical';
+import { TaskPriority } from "../enums/task-proirity";
+import { TaskStatus } from "../enums/task-status";
 
 export interface Task{
-    id: string;
+    id: number;
     name: string;
     description: string;
     status: TaskStatus;
     estimate: number; 
-    assignee: User;
-    reporter: User;
+    assigneeId: number;
+    reporterId: number;
     labels: string;
     sprint: string;
     priority: TaskPriority  

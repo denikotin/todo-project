@@ -1,10 +1,10 @@
-import { ListItemStatus } from "../enums/todo-enums";
+import { TaskStatus } from "../enums/task-status";
 
 export interface ListItem{
   id: number;
   text: string;
   description?: string;
-  status: ListItemStatus;
+  status: TaskStatus;
 }
 
 export interface InputedData{

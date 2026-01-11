@@ -1,9 +1,0 @@
-<div class="description-container">
-    <div style="height: 100%; width: 100%; display: flex; flex-direction: column;">
-        <textarea [ngModel]="selectedItem?.description" readonly  class="description"></textarea>
-        <div class="checkbox-container">
-            <input id="input" type="checkbox" [checked]="check()" (change)="onChanged($event)">
-            <label for="input" style="margin-left: 10px;">Complete</label>
-        </div>
-    </div>
-</div>

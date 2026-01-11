@@ -1,20 +1,16 @@
 import { Component, inject } from '@angular/core';
-import { ButtonComponent } from '../button-component/button-component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { TipTextDirective } from '../../shared/directives/tip-text.directive';
-import { TodoListService } from '../../core/services/todo-list-service';
-import { ToastService } from '../../core/services/toast-service';
+import { TodoListService } from '../../../core/services/todo-list-service';
 
 @Component({
   selector: 'app-todo-create-item',
-  imports: [ButtonComponent, ReactiveFormsModule, TipTextDirective],
+  imports: [ ReactiveFormsModule],
   templateUrl: './todo-create-item.html',
   styleUrl: './todo-create-item.css',
 })
 export class TodoCreateItem {
 
   private todoListService = inject(TodoListService);
-  private toastService = inject(ToastService);
 
   protected todoListFormGroup = new FormGroup({
     title: new FormControl(''),
@@ -32,7 +28,7 @@ export class TodoCreateItem {
 
     this.todoListFormGroup.controls.title.reset();
     this.todoListFormGroup.controls.description.reset();
-    this.toastService.showToast({title:'Success', message: 'To do added', status:'success', duration: 3000});
+    // this.toastService.showToast({title:'Success', message: 'To do added', status:'success', duration: 3000});
   }
 
 }

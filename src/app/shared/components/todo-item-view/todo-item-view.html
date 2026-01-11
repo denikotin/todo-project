@@ -1,0 +1,62 @@
+<form [formGroup]="taskForm" style="height:100%;" >
+    <div class="container">
+        <div class="fields">
+            <tui-textfield tuiTextfieldSize="m">
+                <label tuiLabel>Наименование</label>
+                <input tuiTextfield formControlName="name" />
+            </tui-textfield>
+
+            <tui-textfield [stringify]="stringifyStatusOrPriority" tuiChevron tuiTextfieldSize="m">
+                <label tuiLabel>Статус</label>
+                <input tuiSelect  formControlName="status" />
+                <tui-data-list-wrapper *tuiTextfieldDropdown  new [items]="statusList()" />
+            </tui-textfield>
+
+            <tui-textfield tuiTextfieldSize="m">
+                <label tuiLabel>Оценка</label>
+                <input tuiTextfield formControlName="estimate"  />
+            </tui-textfield>
+
+            <tui-textfield [stringify]="stringifyUsers" tuiChevron tuiTextfieldSize="m">
+                <label tuiLabel>Ответственный</label>
+                <input tuiSelect formControlName="assigneeId"   />
+                <tui-data-list-wrapper   *tuiTextfieldDropdown  new  [items]="userList()" />
+            </tui-textfield>
+
+            <tui-textfield [stringify]="stringifyUsers" tuiChevron tuiTextfieldSize="m">
+                <label tuiLabel>Создатель</label>
+                <input tuiSelect formControlName="reporterId"   />
+                <tui-data-list-wrapper   *tuiTextfieldDropdown  new  [items]="userList()" />
+            </tui-textfield>
+
+            <tui-textfield tuiTextfieldSize="m">
+                <label tuiLabel>Лейбл</label>
+                <input tuiTextfield formControlName="labels" />
+            </tui-textfield>
+
+            <tui-textfield tuiTextfieldSize="m">
+                <label tuiLabel>Спринт</label>
+                <input tuiTextfield formControlName="sprint" />
+            </tui-textfield>
+
+            <tui-textfield [stringify]="stringifyStatusOrPriority" tuiChevron tuiTextfieldSize="m">
+                <label tuiLabel>Приоритет</label>
+                <input tuiSelect formControlName="priority"  />
+                <tui-data-list-wrapper   *tuiTextfieldDropdown  new [items]="priorityList()" />
+            </tui-textfield>
+
+
+
+            <tui-textfield  class="description">
+                <label tuiLabel>Описание</label>
+                <textarea [max]="9" formControlName="description" tuiTextarea></textarea>
+            </tui-textfield>                      
+        </div>
+
+        <div>
+            <button tuiButton [size]="'m'" (click)="test()" type="button">Изменить</button>
+            <button style="margin-left: 10px;" tuiButton [size]="'m'" type="button">Добавить</button>
+        </div>
+
+    </div>
+</form>

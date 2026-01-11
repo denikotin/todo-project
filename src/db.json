@@ -2,24 +2,245 @@
     "list": [
         {
             "id": 1,
-            "text": "Buy a new gaming laptop",
-            "description": "Brand new gaming laptop",
-            "status": "InProgress"
+            "name": "Разработка авторизации",
+            "description": "Создать систему входа/регистрации с JWT токенами",
+            "status": "InProgress",
+            "estimate": 8,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,security",
+            "sprint": "Sprint 1",
+            "priority": "High"
         },
         {
             "id": 2,
-            "text": "Complete previous task",
-            "description": "Dont forget to complete, it is important !!!",
-            "status": "InProgress"
+            "name": "Дизайн главной страницы",
+            "description": "Создать макет и UI-кит для главной страницы приложения",
+            "status": "Todo",
+            "estimate": 12,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "frontend,design",
+            "sprint": "Sprint 1",
+            "priority": "Medium"
         },
         {
             "id": 3,
-            "text": "ToDo Something Cool",
-            "description": "YEEEEASS",
-            "status": "InProgress"
+            "name": "Написание тестов API",
+            "description": "Покрыть unit и integration тестами основные endpoints",
+            "status": "Review",
+            "estimate": 6,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,testing",
+            "sprint": "Sprint 1",
+            "priority": "Medium"
+        },
+        {
+            "id": 4,
+            "name": "Интеграция платежной системы",
+            "description": "Подключить Stripe для обработки онлайн-платежей",
+            "status": "Done",
+            "estimate": 16,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,payment",
+            "sprint": "Sprint 0",
+            "priority": "High"
+        },
+        {
+            "id": 5,
+            "name": "Оптимизация загрузки изображений",
+            "description": "Реализовать lazy loading и сжатие изображений",
+            "status": "Todo",
+            "estimate": 5,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "frontend,performance",
+            "sprint": "Sprint 2",
+            "priority": "Medium"
+        },
+        {
+            "id": 6,
+            "name": "Документация API",
+            "description": "Создать Swagger документацию для всех endpoints",
+            "status": "InProgress",
+            "estimate": 4,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,documentation",
+            "sprint": "Sprint 1",
+            "priority": "Low"
+        },
+        {
+            "id": 7,
+            "name": "Рефакторинг базы данных",
+            "description": "Оптимизировать запросы и добавить недостающие индексы",
+            "status": "Review",
+            "estimate": 10,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,database",
+            "sprint": "Sprint 1",
+            "priority": "High"
+        },
+        {
+            "id": 8,
+            "name": "Адаптивная верстка",
+            "description": "Доработать верстку для мобильных устройств и планшетов",
+            "status": "Todo",
+            "estimate": 8,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "frontend,responsive",
+            "sprint": "Sprint 2",
+            "priority": "Medium"
+        },
+        {
+            "id": 9,
+            "name": "Настройка CI/CD",
+            "description": "Настроить автоматическое развертывание в staging окружении",
+            "status": "Done",
+            "estimate": 7,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "devops,automation",
+            "sprint": "Sprint 0",
+            "priority": "High"
+        },
+        {
+            "id": 10,
+            "name": "Добавление логгирования",
+            "description": "Внедрить централизованную систему логгирования ошибок",
+            "status": "InProgress",
+            "estimate": 3,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,monitoring",
+            "sprint": "Sprint 1",
+            "priority": "Low"
+        },
+        {
+            "id": 11,
+            "name": "Создание дашборда аналитики",
+            "description": "Разработать панель администратора с графиками и метриками",
+            "status": "Todo",
+            "estimate": 14,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "frontend,analytics",
+            "sprint": "Sprint 2",
+            "priority": "High"
+        },
+        {
+            "id": 12,
+            "name": "Реализация чата поддержки",
+            "description": "Встроить live-чат для общения с техподдержкой",
+            "status": "InProgress",
+            "estimate": 10,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "frontend,backend,realtime",
+            "sprint": "Sprint 1",
+            "priority": "Medium"
+        },
+        {
+            "id": 13,
+            "name": "Миграция на новую версию фреймворка",
+            "description": "Обновить React с версии 17 на 18 с проверкой совместимости",
+            "status": "Review",
+            "estimate": 8,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "frontend,upgrade",
+            "sprint": "Sprint 1",
+            "priority": "Medium"
+        },
+        {
+            "id": 14,
+            "name": "Добавление двухфакторной аутентификации",
+            "description": "Реализовать 2FA через SMS и аутентификатор",
+            "status": "Todo",
+            "estimate": 12,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,security",
+            "sprint": "Sprint 2",
+            "priority": "High"
+        },
+        {
+            "id": 15,
+            "name": "Создание email-рассылок",
+            "description": "Настроить триггерные письма для уведомлений пользователей",
+            "status": "Done",
+            "estimate": 6,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,marketing",
+            "sprint": "Sprint 0",
+            "priority": "Medium"
+        },
+        {
+            "id": 16,
+            "name": "Оптимизация производительности базы данных",
+            "description": "Проанализировать и улучшить медленные SQL-запросы",
+            "status": "InProgress",
+            "estimate": 9,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,database,performance",
+            "sprint": "Sprint 1",
+            "priority": "High"
+        },
+        {
+            "id": 17,
+            "name": "Добавление темной темы",
+            "description": "Реализовать переключение между светлой и темной темами интерфейса",
+            "status": "Todo",
+            "estimate": 7,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "frontend,ui/ux",
+            "sprint": "Sprint 2",
+            "priority": "Low"
+        },
+        {
+            "id": 18,
+            "name": "Интеграция с Google Analytics",
+            "description": "Настроить отслеживание событий и пользовательской аналитики",
+            "status": "Review",
+            "estimate": 4,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "frontend,analytics",
+            "sprint": "Sprint 1",
+            "priority": "Medium"
+        },
+        {
+            "id": 19,
+            "name": "Реализация полнотекстового поиска",
+            "description": "Добавить поиск по товарам и статьям с фильтрами",
+            "status": "InProgress",
+            "estimate": 11,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,frontend,search",
+            "sprint": "Sprint 1",
+            "priority": "High"
+        },
+        {
+            "id": 20,
+            "name": "Создание системы уведомлений",
+            "description": "Разработать сервис push-уведомлений и in-app оповещений",
+            "status": "Todo",
+            "estimate": 10,
+            "assigneeId": 1,
+            "reporterId": 2,
+            "labels": "backend,frontend,notifications",
+            "sprint": "Sprint 2",
+            "priority": "Medium"
         }
     ],
-
     "users": [
         {
             "id": 1,
@@ -27,7 +248,7 @@
             "password": "admin",
             "firstname": "Админ",
             "lastname": "Админов",
-            "icon": "avatar.png"
+            "icon": "admin.png"
         },
         {
             "id": 2,

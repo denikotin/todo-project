@@ -3,13 +3,14 @@ import { Router } from "@angular/router";
 import { HttpService } from "./http.service";
 import { catchError, map, Observable, of } from "rxjs";
 import { inject, Injectable, signal } from "@angular/core";
+import { UserService } from "./user.service";
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
     private readonly AUTH_STORAGE_KEY = 'auth';
 
-    private httpService = inject(HttpService)
+    private userService = inject(UserService)
     private router = inject(Router)
 
     isLoggedIn = signal(false);
@@ -21,8 +22,9 @@ export class AuthService {
 
     // Метод авторизации
     public login(username: string, password: string): Observable<boolean> {
-        return this.httpService.getUsers().pipe(
+        return this.userService.getUsers().pipe(
             map((users: User[]) => {
+                console.log(users)
                 const user = users.find(u => u.username === username && u.password === password);
                 if (user) {
                     this.isLoggedIn.set(true);
@@ -45,6 +47,7 @@ export class AuthService {
         this.isLoggedIn.set(false);
         this.user.set(null);
         this.clearAuthStorage();
+        this.userService.clearUsers()
         this.router.navigate(['/login'], {
             replaceUrl: true,
             queryParams: { sessionEnded: true }

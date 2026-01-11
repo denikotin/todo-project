@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { TodoItemView } from './components/todo-item-view/todo-item-view';
+import { TodoItemView } from './shared/components/todo-item-view/todo-item-view';
 import { Backlog } from './features/backlog/backlog';
 import { Board } from './features/board/board';
 import { authGuard } from './core/guards/auth.guard';
