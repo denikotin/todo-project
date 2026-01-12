@@ -6,10 +6,11 @@ import { TuiLoader } from '@taiga-ui/core';
 
 import { DragDropModule, CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ToDoListItem } from '../../shared/components/to-do-list-item/to-do-list-item';
+import { Filter } from '../../shared/components/filter/filter';
 
 @Component({
   selector: 'app-board',
-  imports: [TuiLoader, CdkDropList, CdkDrag, DragDropModule, ToDoListItem],
+  imports: [TuiLoader, CdkDropList, CdkDrag, DragDropModule, ToDoListItem, Filter],
   templateUrl: './board.html',
   styleUrl: './board.css'
 })
@@ -20,20 +21,22 @@ export class Board implements OnInit {
   // Флаг загрузки данных
   protected isLoading: boolean = true;
 
+  protected filteredTasks = signal<Task[]>([])
+
   protected todoTasks = computed(() => {
-    return this.taskService.taskList()?.filter(x => x.status.toString() === 'Todo')
+    return this.filteredTasks()?.filter(x => x.status.toString() === 'Todo')
   })
 
   protected inProgressTasks = computed(() => {
-    return this.taskService.taskList()?.filter(x => x.status.toString() === 'InProgress')
+    return this.filteredTasks()?.filter(x => x.status.toString() === 'InProgress')
   })
 
   protected reviewTasks = computed(() => {
-    return this.taskService.taskList()?.filter(x => x.status.toString() === 'Review')
+    return this.filteredTasks()?.filter(x => x.status.toString() === 'Review')
   })
 
   protected doneTasks = computed(() => {
-    return this.taskService.taskList()?.filter(x => x.status.toString() === 'Done')
+    return this.filteredTasks()?.filter(x => x.status.toString() === 'Done')
   })
 
   ngOnInit(): void {

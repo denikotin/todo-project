@@ -3,45 +3,53 @@
         <tui-loader [size]="'xxl'" />
     </div>
 } @else{
+
     <div class="board" cdkDropListGroup>
 
-        <div class="column">
-            <h2>Сделать</h2>
-            <div cdkDropList id="TODO" #todoList="cdkDropList" [cdkDropListData]="todoTasks" (cdkDropListDropped)="drop($event)">
-                @for (item of todoTasks(); track item) {
-                    <app-to-do-list-item cdkDrag [task]="item" (onDelete)="deleteItem($event)"> </app-to-do-list-item>     
-                }
-            </div>
+        <div class="filter-container">
+            <app-filter (filteredTasksOutput)="filteredTasks.set($event)" ></app-filter>
         </div>
 
-        
+        <div class="column-container">
 
-        <div class="column">
-            <h2>Выполняется</h2>
-            <div cdkDropList id="PROGRESS" #todoList="cdkDropList" [cdkDropListData]="inProgressTasks" (cdkDropListDropped)="drop($event)">
-                @for (item of inProgressTasks(); track item) {
-                    <app-to-do-list-item cdkDrag [task]="item" (onDelete)="deleteItem($event)"> </app-to-do-list-item>     
-                }
+            <div class="column">
+                <h2>Сделать</h2>
+                <div class="dropList" cdkDropList id="TODO" #todoList="cdkDropList" [cdkDropListData]="todoTasks" (cdkDropListDropped)="drop($event)">
+                    @for (item of todoTasks(); track item) {
+                        <app-to-do-list-item cdkDrag [task]="item" (onDelete)="deleteItem($event)"> </app-to-do-list-item>     
+                    }
+                </div>
             </div>
+
+            <div class="column">
+                <h2>Выполняется</h2>
+                <div class="dropList" cdkDropList id="PROGRESS" #todoList="cdkDropList" [cdkDropListData]="inProgressTasks" (cdkDropListDropped)="drop($event)">
+                    @for (item of inProgressTasks(); track item) {
+                        <app-to-do-list-item cdkDrag [task]="item" (onDelete)="deleteItem($event)"> </app-to-do-list-item>     
+                    }
+                </div>
+            </div>
+
+            <div class="column">
+                <h2>Проверка</h2>
+                <div class="dropList" cdkDropList id="REVIEW" #todoList="cdkDropList" [cdkDropListData]="reviewTasks" (cdkDropListDropped)="drop($event)">
+                    @for (item of reviewTasks(); track item) {
+                        <app-to-do-list-item cdkDrag [task]="item" (onDelete)="deleteItem($event)"> </app-to-do-list-item>     
+                    }
+                </div>
+            </div>
+            
+            <div class="column">
+                <h2>Выполнено</h2>
+                <div class="dropList" cdkDropList id="DONE" #todoList="cdkDropList" [cdkDropListData]="doneTasks" (cdkDropListDropped)="drop($event)">
+                    @for (item of doneTasks(); track item) {
+                        <app-to-do-list-item cdkDrag [task]="item" (onDelete)="deleteItem($event)"> </app-to-do-list-item>     
+                    }
+                </div>
+            </div>
+
         </div>
 
-        <div class="column">
-            <h2>Проверка</h2>
-            <div cdkDropList id="REVIEW" #todoList="cdkDropList" [cdkDropListData]="reviewTasks" (cdkDropListDropped)="drop($event)">
-                @for (item of reviewTasks(); track item) {
-                    <app-to-do-list-item cdkDrag [task]="item" (onDelete)="deleteItem($event)"> </app-to-do-list-item>     
-                }
-            </div>
-        </div>
-        
-        <div class="column">
-            <h2>Выполнено</h2>
-            <div cdkDropList id="DONE" #todoList="cdkDropList" [cdkDropListData]="doneTasks" (cdkDropListDropped)="drop($event)">
-                @for (item of doneTasks(); track item) {
-                    <app-to-do-list-item cdkDrag [task]="item" (onDelete)="deleteItem($event)"> </app-to-do-list-item>     
-                }
-            </div>
-        </div>
 
     </div>
 }

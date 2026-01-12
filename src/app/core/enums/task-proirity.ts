@@ -1,5 +1,5 @@
 export enum TaskPriority{
-    Low = 'Низкая',
-    Medium = 'Средняя',
-    High = 'Высокая',
+    Low = 'Низкий',
+    Medium = 'Средний',
+    High = 'Высокий',
 }

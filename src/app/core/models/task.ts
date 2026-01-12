@@ -10,6 +10,6 @@ export class Task{
     assigneeId: number;
     reporterId: number;
     labels: string;
-    sprint: string;
+    sprint: number;
     priority: TaskPriority  
 }

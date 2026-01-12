@@ -53,7 +53,7 @@ export class TaskService {
     }
 
     public deleteTask(id: number): void {
-        this.taskList.set(this.taskList().filter((item) => id !== item.id))
+        this.taskList.set(this.taskList().filter((item) => item.id !== id))
         this.httpService.deleteTask(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
             next: () => {
                 this.toast.open("Задача удалена !", { autoClose: 2000, data: "@tui.check" }).subscribe();

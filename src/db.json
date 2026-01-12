@@ -1,76 +1,16 @@
 {
   "list": [
     {
-      "id": "6",
-      "name": "Докта",
-      "description": "Создать Swagger документацию для всех endpoints",
-      "status": "InProgress",
-      "estimate": 4,
-      "assigneeId": "1",
-      "reporterId": "3",
-      "labels": "backend,documentation",
-      "sprint": "1",
-      "priority": "Low"
-    },
-    {
-      "id": "7",
-      "name": "Рефакторинг базы данных",
-      "description": "Оптимизировать запросы и добавить недостающие индексы",
-      "status": "Review",
-      "estimate": 10,
-      "assigneeId": 1,
-      "reporterId": 2,
-      "labels": "backend,database",
-      "sprint": "1",
-      "priority": "High"
-    },
-    {
-      "id": "9",
-      "name": "Настройка CI/CD",
-      "description": "Настроить автоматическое развертывание в staging окружении",
-      "status": "Done",
-      "estimate": 7,
-      "assigneeId": 1,
-      "reporterId": 2,
-      "labels": "devops,automation",
-      "sprint": "0",
-      "priority": "High"
-    },
-    {
-      "id": "13",
-      "name": "Миграция на новую версию фреймворка",
-      "description": "Обновить React с версии 17 на 18 с проверкой совместимости",
-      "status": "InProgress",
-      "estimate": 8,
-      "assigneeId": 1,
-      "reporterId": 2,
-      "labels": "frontend,upgrade",
-      "sprint": "1",
-      "priority": "Medium"
-    },
-    {
       "id": "15",
-      "name": "Создание email-рассылок",
+      "name": "цуйцуйцуцйу",
       "description": "Настроить триггерные письма для уведомлений пользователей",
-      "status": "Done",
+      "status": "Review",
       "estimate": 6,
-      "assigneeId": 1,
-      "reporterId": 2,
-      "labels": "backend,marketing",
-      "sprint": "0",
-      "priority": "Medium"
-    },
-    {
-      "id": "16",
-      "name": "Разработка авторизации",
-      "description": "Создать систему входа/регистрации с JWT токенами",
-      "status": "InProgress",
-      "estimate": 8,
       "assigneeId": "1",
       "reporterId": "2",
-      "labels": "",
-      "sprint": "1",
-      "priority": "High"
+      "labels": "backend,marketing",
+      "sprint": 0,
+      "priority": "Medium"
     },
     {
       "id": "1",
@@ -78,10 +18,10 @@
       "description": "Переработать дизайн главной страницы по новым гайдлайнам",
       "status": "Done",
       "estimate": 5,
-      "assigneeId": "3",
-      "reporterId": "1",
+      "assigneeId": "1",
+      "reporterId": "2",
       "labels": "frontend,design",
-      "sprint": "2",
+      "sprint": 2,
       "priority": "Medium"
     },
     {
@@ -90,9 +30,10 @@
       "description": "Уменьшить время загрузки страниц на 30%",
       "status": "Review",
       "estimate": 6,
-      "reporterId": "1",
+      "assigneeId": 1,
+      "reporterId": 2,
       "labels": "frontend,performance",
-      "sprint": "1",
+      "sprint": 1,
       "priority": "High"
     },
     {
@@ -101,10 +42,10 @@
       "description": "Создать React Native приложение для iOS и Android",
       "status": "InProgress",
       "estimate": 15,
-      "assigneeId": "5",
-      "reporterId": "2",
+      "assigneeId": 1,
+      "reporterId": 2,
       "labels": "mobile,react-native",
-      "sprint": "3",
+      "sprint": 3,
       "priority": "High"
     },
     {
@@ -113,10 +54,10 @@
       "description": "Провести пентест и устранить уязвимости",
       "status": "Review",
       "estimate": 4,
-      "assigneeId": "6",
-      "reporterId": "3",
+      "assigneeId": 1,
+      "reporterId": 2,
       "labels": "security,testing",
-      "sprint": "1",
+      "sprint": 1,
       "priority": "Critical"
     },
     {
@@ -125,10 +66,10 @@
       "description": "Подключить Stripe для обработки платежей",
       "status": "Done",
       "estimate": 9,
-      "assigneeId": "7",
-      "reporterId": "4",
+      "assigneeId": 1,
+      "reporterId": 2,
       "labels": "backend,payments",
-      "sprint": "0",
+      "sprint": 0,
       "priority": "High"
     },
     {
@@ -137,10 +78,10 @@
       "description": "Разработать интерфейс для управления пользователями и контентом",
       "status": "Todo",
       "estimate": 12,
-      "assigneeId": "8",
-      "reporterId": "5",
+      "assigneeId": 1,
+      "reporterId": 2,
       "labels": "frontend,admin",
-      "sprint": "2",
+      "sprint": 2,
       "priority": "Medium"
     },
     {
@@ -149,10 +90,10 @@
       "description": "Достичь покрытия кода тестами в 80%",
       "status": "Todo",
       "estimate": 8,
-      "assigneeId": "9",
-      "reporterId": "6",
+      "assigneeId": 1,
+      "reporterId": 2,
       "labels": "testing,quality",
-      "sprint": "1",
+      "sprint": 1,
       "priority": "Medium"
     },
     {
@@ -161,35 +102,35 @@
       "description": "Добавить полнотекстовый поиск по платформе",
       "status": "Done",
       "estimate": 7,
-      "assigneeId": "10",
-      "reporterId": "7",
+      "assigneeId": 1,
+      "reporterId": 2,
       "labels": "backend,search",
-      "sprint": "1",
+      "sprint": 1,
       "priority": "Medium"
     },
     {
-      "id": "12",
-      "name": "Разработка дашборда аналитики",
-      "description": "Создать панель с метриками и графиками",
+      "id": "17",
+      "name": "Интеграция платежной системы",
+      "description": "Подключить Stripe для обработки платежей",
       "status": "Done",
-      "estimate": 10,
-      "assigneeId": "3",
-      "reporterId": "8",
-      "labels": "frontend,analytics",
-      "sprint": "0",
-      "priority": "Low"
+      "estimate": 9,
+      "assigneeId": "1",
+      "reporterId": "2",
+      "labels": "backend,payments",
+      "sprint": "",
+      "priority": "High"
     },
     {
-      "id": "17",
-      "name": "Миграция данных",
-      "description": "Перенести данные со старой системы в новую базу",
-      "status": "Todo",
-      "estimate": 6,
-      "assigneeId": "4",
-      "reporterId": "9",
-      "labels": "backend,database",
-      "sprint": "2",
-      "priority": "High"
+      "id": 18,
+      "name": "Интеграция платежной системы",
+      "description": "Подключить Stripe для обработки платежей",
+      "status": "Done",
+      "estimate": 9,
+      "assigneeId": "1",
+      "reporterId": "2",
+      "labels": "backend,payments",
+      "sprint": "",
+      "priority": "Low"
     }
   ],
   "users": [

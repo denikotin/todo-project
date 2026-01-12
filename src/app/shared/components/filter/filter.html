@@ -1,0 +1,50 @@
+<tui-textfield [rows]="1" [tuiTextfieldSize]="'m'" multi tuiChevron [stringify]="stringify" >
+    <input placeholder="Выбрать фильтр" tuiInputChip [ngModel]="filterKeys()" (ngModelChange)="onFilter($event)"/>
+    <tui-input-chip *tuiItem />
+    <tui-data-list *tuiTextfieldDropdown>
+
+        <tui-opt-group label="Статус" tuiMultiSelectGroup>
+            <button *ngFor="let item of filterStatusList() | tuiFilterByInput" 
+                    new
+                    tuiOption
+                    [value]="item">
+            {{ item.value }}
+            </button>
+        </tui-opt-group>
+
+        <tui-opt-group label="Приоритет" tuiMultiSelectGroup>
+            <button *ngFor="let item of filterPriorityList() | tuiFilterByInput" 
+                    new
+                    tuiOption
+                    [value]="item">
+            {{ item.value }}
+            </button>
+        </tui-opt-group>
+
+        <tui-opt-group label="Ответственный" tuiMultiSelectGroup>
+            <button *ngFor="let item of filterAssigneeList() | tuiFilterByInput" 
+                    new
+                    tuiOption
+                    [value]="item">
+            {{ item.value }}
+            </button>
+        </tui-opt-group>
+
+        <tui-opt-group label="Создатель" tuiMultiSelectGroup>
+            <button *ngFor="let item of filterReporterList() | tuiFilterByInput" 
+                    new
+                    tuiOption
+                    [value]="item">
+            {{ item.value }}
+            </button>
+        </tui-opt-group>
+
+        <tui-opt-group label="Спринт" tuiMultiSelectGroup>
+            <button *ngFor="let item of filterSprintList() | tuiFilterByInput" 
+                    new tuiOption [value]="item">
+                {{ item.value }}
+            </button>
+        </tui-opt-group>
+
+    </tui-data-list>
+</tui-textfield>
