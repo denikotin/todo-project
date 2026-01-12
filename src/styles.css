@@ -17,6 +17,7 @@ tui-root::before {
 }
 
 
+
 body {
     background: #0968b6;
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
@@ -201,4 +202,18 @@ ul {
   background-color: none;
   border-radius: 5px;
   border: 3px solid #0965B0;
+}
+
+
+[tuiAppearance][data-appearance=primary] {
+    --t-bg: #0965B0!important;
+    background: var(--t-bg);
+    color: var(--tui-text-primary-on-accent-1);
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+    [tuiAppearance][data-appearance=primary]:is(a, button, select, textarea, input, label, .tui-interactive):not(:disabled):hover:not(:disabled):not([data-state]) {
+        --t-bg: #1183e0!important;
+    }
 }

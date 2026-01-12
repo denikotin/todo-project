@@ -27,7 +27,8 @@ li {
 
 .todo-list {
     width: 400px;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -68,9 +69,11 @@ tui-loader {
 }
 
 .selected-task {
-    background-color: rgb(79, 104, 245);
+    background-color: #0965B0!important;
     color: white;
 }
+
+
 
 tui-textfield {
     --t-height: 40px;

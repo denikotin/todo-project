@@ -45,17 +45,15 @@
                 <tui-data-list-wrapper   *tuiTextfieldDropdown  new [items]="priorityList()" />
             </tui-textfield>
 
-
-
             <tui-textfield  class="description">
                 <label tuiLabel>Описание</label>
                 <textarea [max]="9" formControlName="description" tuiTextarea></textarea>
             </tui-textfield>                      
         </div>
 
-        <div>
-            <button tuiButton [size]="'m'" (click)="test()" type="button">Изменить</button>
-            <button style="margin-left: 10px;" tuiButton [size]="'m'" type="button">Добавить</button>
+        <div align="end">
+            <button tuiButton [size]="'m'" type="button" (click)="addTask()" >Добавить</button>
+            <button style="margin-left: 10px;" tuiButton [size]="'m'" (click)="editTask()" type="button">Изменить</button>
         </div>
 
     </div>

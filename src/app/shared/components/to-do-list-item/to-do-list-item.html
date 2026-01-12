@@ -1,2 +1,4 @@
 <span>{{task().name}}</span>
-<button [size]="'s'" tuiButton (click)="onDeleteClick(task().id)" class="button"> Delete </button>
+<button appearance="flat" tuiButton (click)="onDeleteClick(task().id)" class="button">
+    <tui-icon icon="@tui.x"></tui-icon>
+</button>

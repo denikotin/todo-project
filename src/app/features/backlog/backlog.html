@@ -3,20 +3,65 @@
         <div class="todo-list">
 
             <div class="filter-container">
-                <tui-textfield [stringify]="stringify" [content]="filterValue" class="filter"  tuiChevron>
+                <!-- <tui-textfield [stringify]="stringify" [content]="filterValue"  tuiChevron>
                     <input name="ino_1"   tuiSelect    [ngModel]="filterKey" (ngModelChange)="onFilter($event)" />
                     <tui-data-list-wrapper   *tuiTextfieldDropdown  new  [items]="filterStatusList()"/>
+                    <tui-data-list-wrapper   *tuiTextfieldDropdown  new  [items]="filterStatusList()"/>
+                </tui-textfield> -->
+
+                <tui-textfield multi tuiChevron [stringify]="stringify">
+                    <input tuiInputChip [(ngModel)]="filterKeys"/>
+                    <tui-input-chip *tuiItem />
+                    <tui-data-list *tuiTextfieldDropdown>
+
+                        <tui-opt-group label="Статус" tuiMultiSelectGroup>
+                            <button *ngFor="let item of filterStatusList() | tuiFilterByInput" 
+                                    new
+                                    tuiOption
+                                    [value]="item.key">
+                            {{ item.value }}
+                            </button>
+                        </tui-opt-group>
+
+                        <tui-opt-group label="Ответственный" tuiMultiSelectGroup>
+                            <button *ngFor="let item of filterStatusList() | tuiFilterByInput" 
+                                    new
+                                    tuiOption
+                                    [value]="item.key">
+                            {{ item.value }}
+                            </button>
+                        </tui-opt-group>
+
+                        <tui-opt-group label="Создатель" tuiMultiSelectGroup>
+                            <button *ngFor="let item of filterStatusList() | tuiFilterByInput" 
+                                    new
+                                    tuiOption
+                                    [value]="item.key">
+                            {{ item.value }}
+                            </button>
+                        </tui-opt-group>
+
+                        <tui-opt-group label="Приоритет" tuiMultiSelectGroup>
+                            <button *ngFor="let item of filterStatusList() | tuiFilterByInput" 
+                                    new
+                                    tuiOption
+                                    [value]="item.key">
+                            {{ item.value }}
+                            </button>
+                        </tui-opt-group>
+           
+                    </tui-data-list>
                 </tui-textfield>
+
             </div>
 
             <ul>
-                @for (item of todoData; track $index) {
+                @for (item of todoData(); track $index) {
                     <li>
-                        <app-to-do-list-item appTipText [task]="item" 
+                        <app-to-do-list-item [task]="item" 
                                             [routerLink]="[item.id]"
                                             routerLinkActive="selected-task"
                                             (click)="onItemClicked(item.id)" 
-                                            (dblclick)="onItemDblClicked(item.id)" 
                                             (onDelete)="deleteItem($event)"
                                             [ngClass]="selectedItemId == item.id ? 'selected' : '' ">
                         </app-to-do-list-item>                

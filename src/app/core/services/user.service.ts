@@ -14,7 +14,6 @@ export class UserService {
 
     private httpService = inject(HttpService)
 
-
     public getUsers(): Observable<User[]> {
 
         return this.httpService.getUsers().pipe(
@@ -45,7 +44,7 @@ export class UserService {
         try {
             sessionStorage.setItem(this.USER_STORAGE_KEY, JSON.stringify(user))
         } catch (error) {
-            console.warn('Failed to save users to sessionStorage:', error);
+            console.log('Failed to save users to sessionStorage:', error);
         }
     }
 
