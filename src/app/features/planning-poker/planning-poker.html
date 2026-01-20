@@ -1,0 +1,94 @@
+<div class="poker-container">
+
+
+  <div class="new-task-section" *ngIf="!session()">
+
+      <div class="task-form">
+
+          <h1>Planning Poker</h1>
+
+          <tui-textfield class="full-width" tuiTextfieldSize="m">
+                  <label tuiLabel>Название задачи</label>
+                  <input tuiTextfield [(ngModel)]="newTaskName" />
+          </tui-textfield>
+
+          <tui-textfield class="full-width m-t" tuiTextfieldSize="m">
+                  <label tuiLabel>Описание задачи</label>
+                  <textarea [max]="3" [(ngModel)]="newTaskDescription"  tuiTextarea></textarea>
+          </tui-textfield>
+
+          <button tuiButton class="m-t" [disabled]="!newTaskName.trim()" [size]="'m'" type="button" (click)="createNewTask()">
+            Начать сессию
+            <tui-icon icon="@tui.spade"></tui-icon>
+          </button> 
+          
+      </div>
+
+  </div>
+
+  <div class="session-container" *ngIf="session()">
+
+    <h1>{{ session()?.taskName }}</h1>
+
+    <div class="poker-table-container">
+
+      <div class="users-cards">
+        @for(user of users(); track $index){
+          <div class="user-card-container">
+            <div class="user-card">
+              <tui-icon *ngIf="!session()?.revealed" icon="@tui.spade"></tui-icon>
+              <span *ngIf="session()?.revealed"> {{ session().votes[user.id] }} </span>
+            </div>
+            <span>{{user.firstname}}</span>
+          </div>
+        }
+      </div>
+
+      <div class="poker-table">
+        <button tuiButton *ngIf="myVote && !session()?.revealed"  [size]="'m'" (click)="revealVotes()" type="button" >
+            Раскрыть голоса
+        </button>
+        <button tuiButton *ngIf="session()?.revealed" (click)="startNewTask()" [size]="'m'" type="button">
+            Новая сессия
+        </button> 
+      </div>
+
+      <div class="users-cards">
+        <div class="user-card-container">
+          <div class="user-card">
+               <tui-icon *ngIf="!session()?.revealed" icon="@tui.spade"></tui-icon>
+               <span *ngIf="session()?.revealed"> {{ myVote }} </span>
+          </div>
+          <span>{{currentUser().firstname}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="fibonacci-cards" *ngIf="!session()?.revealed">
+      @for(card of fibonacciCards();track $index ){
+        <button  class="poker-card"
+                 [class.selected]="myVote === card"
+                 (click)="vote(card)">
+          {{ card }}
+        </button>
+      }
+    </div>
+
+    <div class="results-section" *ngIf="session()?.revealed">
+      <div class="final-result">
+          Среднее значение: {{ session()?.average }}
+      </div>
+      <div class="final-result">
+          Согласованность:
+      </div>
+      <div class="final-result">
+          <label tuiProgressLabel>
+            <span class="percent">{{ session()?.agreement }}%</span>
+        	  <tui-progress-circle size="m"  [max]="100"  [value]="session()?.agreement || 0" /> 
+          </label>
+      </div>
+    </div>
+  </div>
+
+</div>
