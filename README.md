@@ -12,7 +12,7 @@ ng serve
 
 ## API
 
-To start a API erver, run:
+To start a API, run:
 
 ```bash
 npm run start-backend
